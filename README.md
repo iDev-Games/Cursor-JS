@@ -21,8 +21,6 @@ Cursor.js powers dynamic, CSS-driven cursor-reactive effects using CSS variables
 
 See it in action here: https://idev-games.github.io/Cursor-JS/
 
-Find more examples here: https://github.com/iDev-Games/Cursor-JS-Examples
-
 Find our codepen examples here: https://codepen.io/collection/cursor-js
 
 Keep up to date with tutorials, examples and information on my dev.to: https://dev.to/idevgames
@@ -169,24 +167,6 @@ This creates global CSS variables:
     calc((var(--cursor-x) - 50%) * 0.3),
     calc((var(--cursor-y) - 50%) * 0.3)
   );
-}
-```
-
-## 3D Tilt Effect
-```html
-<div class="tilt-card" data-cursor data-cursor-var="true">
-  <div class="content">Card Content</div>
-</div>
-```
-```css
-.tilt-card {
-  transform-style: preserve-3d;
-  transition: transform 0.3s ease-out;
-}
-.tilt-card.cursor {
-  transform: perspective(1000px)
-    rotateX(calc((var(--cursor-y) - 50%) * -0.3deg))
-    rotateY(calc((var(--cursor-x) - 50%) * 0.3deg));
 }
 ```
 
