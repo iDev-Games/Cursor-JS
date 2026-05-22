@@ -1,6 +1,6 @@
 {
   "name": "@idevgames/cursor-js",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Cursor.js powers dynamic, CSS-driven cursor-reactive effects using CSS variables and cursor position data, making mouse interactions effortless. Create custom animations in CSS or use cursor-animations.css for ready-made effects—full control or quick setup. Perfect for interactive websites.",
   "main": "src/cursor.js",
   "repository": {
