@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/iDev-Games/Cursor-JS/blob/main/logo.png">
+  <img src="https://github.com/iDev-Games/Cursor-JS/blob/master/logo.png">
 </p>
 
 
@@ -15,7 +15,7 @@
 Cursor.js powers dynamic, CSS-driven cursor-reactive effects using CSS variables and cursor position data, making mouse interactions effortless. Create custom animations in CSS or use cursor-animations.css for ready-made effects—full control or quick setup. Perfect for interactive websites.
 
 <p align="center">
-  <img src="https://github.com/iDev-Games/Cursor-JS/raw/main/creative.gif">
+  <img src="https://github.com/iDev-Games/Cursor-JS/raw/master/creative.gif">
 </p>
 
 
@@ -34,7 +34,7 @@ You can download from Github.
 Install with NPM
 
 ```css
-npm i cursor-js
+npm i @idevgames/cursor-js
 ```
 
 Use Cursor.js from a CDN
