@@ -10,7 +10,6 @@
 
 [![GitHub tag](https://img.shields.io/github/tag/iDev-Games/Cursor-JS?include_prereleases=&sort=semver&color=blue)](https://github.com/iDev-Games/Cursor-JS/releases/)
 [![License](https://img.shields.io/badge/License-MIT-blue)](#license)
-![npm bundle size](https://img.shields.io/bundlephobia/min/@idevgames/cursor-js)
 
 Cursor.js powers dynamic, CSS-driven cursor-reactive effects using CSS variables and cursor position data, making mouse interactions effortless. Create custom animations in CSS or use cursor-animations.css for ready-made effects—full control or quick setup. Perfect for interactive websites.
 
