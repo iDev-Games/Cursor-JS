@@ -46,7 +46,7 @@ Using nothing but the power of CSS, HTML and Cursor.js, you can make interactive
 
 Cursor.js is really simple and quick to work with. You can use Cursor.js even if you aren't familiar with javascript.
 
-Cursor.js is the perfect solution for CSS cursor animations in any project by developers of any skill level for both light or heavy usage. Perfect for creating magnetic effects, parallax on hover, tilt effects, and more! Pair with [https://github.com/iDev-Games/Cursor-JS](Cursor.js) for efficient scroll animations that work in the same way.
+Cursor.js is the perfect solution for CSS cursor animations in any project by developers of any skill level for both light or heavy usage. Perfect for creating magnetic effects, parallax on hover, tilt effects, and more! Pair with [https://github.com/iDev-Games/Trig-JS](Trig.js) for efficient scroll animations that work in the same way.
 
 # Cursor-Animations.css
 Configurable predefined cursor animations for your projects
