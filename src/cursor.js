@@ -1,4 +1,4 @@
-/* Cursor.js v1.0.0 by iDev Games */
+/* Cursor.js v1.0.2 by iDev Games */
 class Cursor
 {
     cursors = [];
@@ -25,6 +25,9 @@ class Cursor
         this.cursorMove = this.cursorMove.bind(this);
         this.cursorMouseDown = this.cursorMouseDown.bind(this);
         this.cursorMouseUp = this.cursorMouseUp.bind(this);
+        this.cursorTouchStart = this.cursorTouchStart.bind(this);
+        this.cursorTouchMove = this.cursorTouchMove.bind(this);
+        this.cursorTouchEnd = this.cursorTouchEnd.bind(this);
         this.cursorObserver = this.cursorObserver.bind(this);
         this.observer = new IntersectionObserver(this.cursorObserver);
     }
@@ -102,6 +105,25 @@ class Cursor
     cursorMouseUp(){
         this.isMouseDown = false;
         document.body.classList.remove('cursor-down');
+    }
+
+    cursorTouchStart(e){
+        if(e.touches.length > 0){
+            const touch = e.touches[0];
+            this.cursorMove({clientX: touch.clientX, clientY: touch.clientY});
+            this.cursorMouseDown();
+        }
+    }
+
+    cursorTouchMove(e){
+        if(e.touches.length > 0){
+            const touch = e.touches[0];
+            this.cursorMove({clientX: touch.clientX, clientY: touch.clientY});
+        }
+    }
+
+    cursorTouchEnd(e){
+        this.cursorMouseUp();
     }
 
     cursorEntries(entries) {
@@ -312,4 +334,7 @@ window.cursor = new Cursor;
 window.addEventListener("mousemove", cursor.cursorMove, { passive: true });
 window.addEventListener("mousedown", cursor.cursorMouseDown, { passive: true });
 window.addEventListener("mouseup", cursor.cursorMouseUp, { passive: true });
+window.addEventListener("touchstart", cursor.cursorTouchStart, { passive: true });
+window.addEventListener("touchmove", cursor.cursorTouchMove, { passive: true });
+window.addEventListener("touchend", cursor.cursorTouchEnd, { passive: true });
 window.addEventListener('load', cursor.cursorInit, { passive: true });

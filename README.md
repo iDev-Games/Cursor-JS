@@ -10,7 +10,7 @@
 
 [![GitHub tag](https://img.shields.io/github/tag/iDev-Games/Cursor-JS?include_prereleases=&sort=semver&color=blue)](https://github.com/iDev-Games/Cursor-JS/releases/)
 [![License](https://img.shields.io/badge/License-MIT-blue)](#license)
-![npm bundle size](https://img.shields.io/bundlephobia/min/cursor-js)
+![npm bundle size](https://img.shields.io/bundlephobia/min/@idevgames/cursor-js)
 
 Cursor.js powers dynamic, CSS-driven cursor-reactive effects using CSS variables and cursor position data, making mouse interactions effortless. Create custom animations in CSS or use cursor-animations.css for ready-made effects—full control or quick setup. Perfect for interactive websites.
 
@@ -47,7 +47,7 @@ Using nothing but the power of CSS, HTML and Cursor.js, you can make interactive
 
 Cursor.js is really simple and quick to work with. You can use Cursor.js even if you aren't familiar with javascript.
 
-Cursor.js is the perfect solution for CSS cursor animations in any project by developers of any skill level for both light or heavy usage. Perfect for creating magnetic effects, parallax on hover, tilt effects, and more! Pair with [https://github.com/iDev-Games/Trig-JS](Trig.js) for efficient scroll animations that work in the same way.
+Cursor.js is the perfect solution for CSS cursor animations in any project by developers of any skill level for both light or heavy usage. Perfect for creating magnetic effects, parallax on hover, tilt effects, and more! Pair with [https://github.com/iDev-Games/Cursor-JS](Cursor.js) for efficient scroll animations that work in the same way.
 
 # Cursor-Animations.css
 Configurable predefined cursor animations for your projects
