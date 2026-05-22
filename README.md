@@ -21,7 +21,7 @@ Cursor.js powers dynamic, CSS-driven cursor-reactive effects using CSS variables
 
 See it in action here: https://idev-games.github.io/Cursor-JS/
 
-Find our codepen examples here: https://codepen.io/collection/cursor-js
+Find our codepen examples here: https://codepen.io/collection/RPLmpy
 
 Keep up to date with tutorials, examples and information on my dev.to: https://dev.to/idevgames
 
