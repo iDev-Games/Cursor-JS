@@ -1,0 +1,570 @@
+<html>
+    <head>
+        <title>Cursor.js Documentation</title>
+
+        <!-- Cursor JS -->
+        <script src="src/cursor.js"></script>
+
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+        <!--End Fonts -->
+
+        <!-- Mobile viewport meta tag -->
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <!-- Styles -->
+        <style>
+            body{
+                margin:0px;
+                padding:0px;
+                background-color:#060606;
+                color:#FFF;
+                font-family: 'Space Mono', monospace;
+            }
+            a{
+                color:#FFF;
+            }
+            hr{
+                margin:0px;
+            }
+            .background1{
+                overflow:hidden;
+            }
+            .background1:after{
+                content:"";
+                width:100%;
+                height:100%;
+                position:absolute;
+                top:0;
+                left:0;
+                background-image:url("assets/img/clouds.png");
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: 0;
+                transform:translateX(calc((var(--cursor-x) - 50%) * 0.5)) translateY(calc((var(--cursor-y) - 50%) * 0.5));
+                opacity: 0;
+                transition:all ease-out 0.3s;
+            }
+            .cursor.background1:after{
+                opacity: 0.9;
+            }
+            .background2{
+                overflow:hidden;
+            }
+            .background2:before{
+                content:"";
+                width:400%;
+                height:100%;
+                position:absolute;
+                top:0;
+                left:0;
+                background-image:url("assets/img/plane.jpg");
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: 0;
+                transform:translateX(calc(var(--cursor-x-reverse) / 100)) translateY(calc(var(--cursor-y-reverse) / 100));
+                opacity: 0.1;
+                transition:transform ease-out 0.3s;
+            }
+            .background3{
+                overflow:hidden;
+            }
+            .background3 div{
+                position: relative;
+                z-index:3;
+            }
+            .background3:before {
+                content: "";
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                background-image: url("assets/img/planet1.jpg");
+                background-size: 160%;
+                background-repeat: no-repeat;
+                background-position: var(--cursor-x) var(--cursor-y);
+                opacity: 0.8;
+                transition: background-position ease-out 10s;
+            }
+            .background3:after{
+                content:"";
+                width:100%;
+                height:100%;
+                position:absolute;
+                top:0;
+                left:0;
+                background: rgb(63,210,251);
+                background: linear-gradient(194deg, rgba(63,210,251,0) 0%, rgba(0,0,0,1) 100%);
+                background-position: 0;
+                opacity: calc((var(--cursor-y)) + 50%);
+                z-index:0;
+            }
+            .background4{
+                overflow:hidden;
+            }
+            .background4:before{
+                content:"";
+                width:200%;
+                height:100%;
+                position:absolute;
+                top:0;
+                left:0px;
+                background-image:url("assets/img/wheel.png");
+                background-size: contain;
+                background-position: center;
+                background-repeat: no-repeat;
+                transform: translateX(calc((var(--cursor-x) - 75%))) rotate(var(--cursor-deg));
+                opacity: 0.8;
+                transition:all ease-out 0.5s;
+            }
+            .background5{
+                overflow:hidden;
+                background:rgba(255,255,255,calc((var(--cursor-x) + var(--cursor-y)) / 400));
+                transition:all ease-out 0.3s;
+            }
+            .background5:before{
+                content:"";
+                width:200%;
+                height:100%;
+                position:absolute;
+                top:0;
+                left:0px;
+                background-image:url("assets/img/living-room.jpg");
+                background-size: cover;
+                background-position: left bottom;
+                background-repeat: no-repeat;
+                mix-blend-mode: screen;
+                transform: translateX(calc((var(--cursor-x) - 50%) * -0.5));
+                transition:transform ease-out 1s;
+            }
+            .background6{
+                overflow:hidden;
+                background:rgba(255,255,255, 0.2);
+                transition:opacity ease-out 0.3s;
+            }
+            .background6:before{
+                content:"";
+                width:100%;
+                height:200%;
+                position:absolute;
+                top:0;
+                left:0px;
+                background-image:url("assets/img/skyscraper.jpg");
+                background-size:200%;
+                background-position: center top;
+                background-repeat: no-repeat;
+                mix-blend-mode: screen;
+                transform: translateY(calc((var(--cursor-y) - 50%) * -0.5));
+                transition:transform ease-out 1s;
+            }
+            .cursor.background7{
+                overflow:hidden;
+            }
+            .background7:before{
+                content:"";
+                width:100%;
+                height:100%;
+                clip-path: rect(0% 100% var(--cursor-y) 0%);
+                position:absolute;
+                top:0;
+                left:0px;
+                background: rgb(252,176,69);
+                background: linear-gradient(0deg, rgba(252,176,69,1) 25%, rgba(253,124,41,1) 25%, rgba(253,124,41,1) 50%, rgba(253,29,29,1) 50%, rgba(253,29,29,1) 75%, rgba(208,0,0,1) 75%);
+                background-size: 100vw 100vh;
+                background-position:top;
+                background-repeat: no-repeat;
+                transition:clip-path ease-out 0.3s;
+            }
+            .background8{
+                overflow:hidden;
+                background:rgba(255,255,255,calc((var(--cursor-x) + var(--cursor-y)) / 300));
+            }
+            .background8:before{
+                content:"";
+                width:100%;
+                height:100%;
+                position:absolute;
+                top:0;
+                left:0px;
+                background-image:url("assets/img/servers.jpg");
+                background-size: 100vw 100vh;
+                background-position: center top;
+                background-repeat: no-repeat;
+                filter: blur(calc(var(--cursor-y-px) / 8));
+            }
+            .background9{
+                overflow:hidden;
+                background: #111111;
+            }
+            .background9:before{
+                content: "";
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0px;
+                background: #0b0a0a;
+                background-size: 100vw 100vh;
+                background-position: center top;
+                background-repeat: no-repeat;
+                transform: translateY(calc((var(--cursor-y) - 50%) * 0.5));
+                transition:transform ease-out 0.4s;
+            }
+            .pageContainer{
+                max-width:100%;
+                overflow:hidden;
+            }
+            .container{
+                background-color:#060606;
+                width:100%;
+                min-height:100vh;
+                position:relative;
+                margin:auto;
+                display:flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                max-width: 1800px;
+            }
+            hr{
+                border-color:#AAAAAA;
+            }
+            pre{
+                font-size: 22px;
+                white-space: pre-line;
+                background-color: #111;
+                padding: 20px;
+            }
+            .box{
+                position:relative;
+                display: inline-block;
+                width:auto;
+                margin:auto;
+                margin:20px;
+                padding:20px;
+                max-width: 100%;
+            }
+            .boxBG{
+                background-color: rgba(0, 0, 0, 0.8);
+            }
+            .alignCenter{
+                text-align:center;
+            }
+            h1, .cursorText{
+                font-family: 'Bebas Neue', cursive;
+                color: #700c0c;
+                text-shadow: 2px 2px 2px #000000;
+                font-size:72px;
+            }
+            #logo{
+                transform: scale(calc(var(--cursor-y) * 2));
+                transition: transform ease-out 0.3s;
+            }
+            .listItem{
+                font-size: 20px;
+                background-color: #111;
+                padding: 20px;
+                display:inline-block;
+                margin-top:10px;
+            }
+            .headerText{
+                font-family: 'Bebas Neue', cursive;
+                color: #FFF;
+                text-shadow: 2px 2px 2px #000000;
+                font-size:52px;
+                width:238px;
+            }
+            .moreExamples{
+                display: inline-block;
+                margin: auto;
+                background-color: #F1F1F1;
+                color: #060606;
+                font-weight: bold;
+                padding: 10px 45px;
+                text-decoration: none;
+                transition: transform 0.3s ease-out;
+            }
+            .moreExamples.cursor{
+                transform: scale(1.1);
+            }
+            #headerLine{
+                transform:scaleX(calc(1 + (var(--cursor-x) + var(--cursor-y)) / 150));
+                transition: transform ease-out 0.3s;
+            }
+            #headerLine2{
+                background:#AAAAAA;
+                width:200px;
+                transform:scaleX(calc(1 + (var(--cursor-x) + var(--cursor-y)) / 200));
+                transition: transform ease-out 0.3s;
+            }
+            #Whatis{
+                transform:scale(calc(1 + (var(--cursor-x) + var(--cursor-y)) / 200));
+                width:100%;
+                z-index:2;
+                transition: transform ease-out 0.3s;
+            }
+            #creative{
+                opacity: calc((var(--cursor-x)) + 10%);
+                transform:translateX(calc((var(--cursor-x) - 50%) * 0.5));
+                transition:all ease-out 0.8s;
+            }
+            #withcss{
+                opacity: calc((var(--cursor-x)) + 10%);
+                transform:translateX(calc((var(--cursor-x) - 50%) * -0.5));
+                transition:all ease-out 0.8s;
+            }
+            .fadeIn{
+                opacity:0;
+            }
+            .fadeIn.cursor{
+                animation: fadeIn 1s normal forwards ease-in-out;
+            }
+            .fadeIn.animdelay1{
+                animation-delay: 0.25s;
+            }
+            .fadeIn.animdelay2{
+                animation-delay: 0.5s;
+            }
+            @keyframes fadeIn {
+                0% {
+                    opacity:0;
+                }
+                100% {
+                    opacity:1;
+                }
+            }
+            @media screen and (min-width: 768px) {
+                #documentation{
+                    transform:translateY(calc((var(--cursor-y) - 50%) * 0.5));
+                    transition: transform ease-out 0.3s;
+                }
+                #textBlock{
+                    transform:translateY(calc((var(--cursor-y) - 50%) * 0.2));
+                    transition: transform ease-out 0.3s;
+                }
+                .title{
+                    transform:translateY(calc((var(--cursor-y) - 50%) * -0.2));
+                    transition: transform ease-out 0.3s;
+                }
+                .headerText{
+                    font-size:122px;
+                    width: 100%;
+                }
+                #examples{
+                    position:relative;
+                    z-index:2;
+                    transform:translateY(calc((var(--cursor-y) - 50%) * 0.3));
+                    transition:transform ease-out 0.3s;
+                }
+            }
+        </style>
+        <!-- End of styles -->
+
+    </head>
+    <body>
+        <div class="pageContainer">
+
+            <div class="container alignCenter background1" data-cursor data-cursor-var="true" data-cursor-min="75" data-cursor-max="100">
+                <div class="box">
+                    <h1 id="logo">Cursor.js</h1>
+
+                    <hr id="headerLine" data-cursor data-cursor-var="true" />
+
+                    <h2 id="documentation" data-cursor data-cursor-var="true">Documentation <sup>v1.0.0</sup></h2>
+                </div>
+            </div>
+
+            <hr/>
+
+            <div class="container alignCenter background2" data-cursor data-cursor-pixels="true" data-cursor-var="true">
+                <div class="box" id="Whatis" data-cursor data-cursor-var="true">
+                    <h2>What is Cursor.js?</h2>
+                </div>
+                <hr id="headerLine2" data-cursor data-cursor-var="true"/>
+                <div id="textBlock" data-cursor data-cursor-var="true">
+                    <div class="box" data-cursor>
+                        Cursor.js is a super simple, efficient and lightweight way of making CSS animations that react to cursor position on your HTML elements. You can also use Cursor.js to trigger CSS animations when the cursor hovers over an element.
+                    </div>
+                    <div class="box animdelay1" data-cursor>
+                        Using nothing but the power of CSS, HTML and Cursor.js, you can make the same effects as you see here! Not just that, Cursor.js is really lightweight! Cursor.js is created with javascript and doesn't require any dependencies.
+                    </div>
+                    <div class="box animdelay2" data-cursor>
+                        Cursor.js now includes customizable predefined cursor animations (cursor-animations.css), making it easier than ever to create powerfully reactive websites. Pair with <a href="https://github.com/iDev-Games/Trig-JS">Trig.js</a> for efficient scroll animations that work in the same way.
+                    </div>
+                </div>
+            </div>
+
+            <hr/>
+
+            <div class="container alignCenter background9" data-cursor data-cursor-var="true">
+                <div class="box" id="animationsCSS" data-cursor data-cursor-var="true">
+                    <h2 class="cursorText">Cursor-Animations.css</h2>
+                </div>
+                <hr id="headerLine2" data-cursor data-cursor-var="true"/>
+                <div id="textBlock" data-cursor data-cursor-var="true">
+                    <div class="box" data-cursor>
+                        Configurable predefined cursor animations for your projects
+                    </div>
+                </div>
+                <div id="examples" class="box" data-cursor>
+                    <a class="moreExamples" href="animations.html" target="_Blank" data-cursor>View Documentation</a>
+                </div>
+            </div>
+
+            <hr/>
+
+            <div class="container alignCenter background3" data-cursor data-cursor-pixels="true" data-cursor-var="true">
+                <div class="box boxBG title" id="install">
+                    <h2>How To Install?</h2>
+                </div>
+                <div class="box boxBG" data-cursor>
+                    <p>All you need to do is add the dist cursor.min.js file into your projects JS folder and add the following code with your cursor.js location as the src. Put this code in to your head HTML tags. Download Cursor.js <a href="https://github.com/iDev-Games/Cursor-JS" target="_Blank" style="color:#FFF;">here</a> or use <a href="https://www.npmjs.com/package/cursor-js" target="_Blank" style="color:#FFF;">npm</a>.</p>
+                    <pre>
+                            &lt;script src="/js/cursor.min.js"&gt;&lt;/script&gt;
+                    </pre>
+                    <p>Or just add a CDN instead</p>
+                    <pre>
+                        &lt;script src="https://cdn.jsdelivr.net/npm/@idevgames/cursor-js/src/cursor.min.js"&gt;&lt;/script&gt;
+                    </pre>
+                </div>
+            </div>
+
+            <hr/>
+
+            <div class="container alignCenter background4" data-cursor data-cursor-degrees="true" data-cursor-var="true">
+                <div class="box boxBG title" id="use">
+                    <h2>How To Use?</h2>
+                </div>
+                <div class="box boxBG" data-cursor>
+                    <p>To activate cursor.js add the data attribute "data-cursor" or a class "enable-cursor" to your html element. To trigger animations cursor.js will place a class of "cursor" onto your element when the mouse is hovering over it, as well as "cursor-enter-top", "cursor-enter-bottom", "cursor-enter-left", or "cursor-enter-right" depending from which direction the cursor entered. </p>
+                    <pre>
+                            &lt;div class=" data-cursor&gt; &lt;/div&gt;
+                    </pre>
+                    <pre>
+                        .fadeIn{ opacity:0; }
+                        .fadeIn.cursor{ animation: fadeIn 1s normal forwards ease-in-out; }
+                        @keyframes fadeIn { 0% { opacity:0; } 100% { opacity:1; } }
+                    </pre>
+                </div>
+            </div>
+
+            <hr/>
+
+            <div class="container alignCenter background5" data-cursor data-cursor-var="true">
+                <div class="box boxBG title" id="animation">
+                    <h2>Cursor Animations</h2>
+                </div>
+                <div class="box boxBG" data-cursor>
+                    <p>Cursor.js calculates the percentage of cursor position on the element and creates CSS variables that you can use with CSS transform etc.</p>
+                    <pre>
+                            &lt;div class="element" data-cursor data-cursor-var="true"&gt; &lt;/div&gt;
+                    </pre>
+                    <pre>
+                            .element{ transform: translateX( var(--cursor-x) ); }
+                    </pre>
+                    <p>The CSS variables you can use by adding <strong>data-cursor-var="true", data-cursor-pixels="true" or data-cursor-degrees="true"</strong> are:</p>
+                    <div class="listItem">
+                        --cursor-x
+                    </div>
+                    <div class="listItem">
+                        --cursor-x-reverse
+                    </div>
+                    <div class="listItem">
+                        --cursor-y
+                    </div>
+                    <div class="listItem">
+                        --cursor-y-reverse
+                    </div>
+                    <div class="listItem">
+                        --cursor-x-px
+                    </div>
+                    <div class="listItem">
+                        --cursor-y-px
+                    </div>
+                    <div class="listItem">
+                        --cursor-deg (angle from center)
+                    </div>
+                    <div class="listItem">
+                        --cursor-speed (movement speed)
+                    </div>
+                    <p>The data attribute will also update in increments of 10 so you can use CSS attribute selectors like <span class="listItem">[data-cursor-var-x="50"]{ }</span> for more control.</p>
+                </div>
+            </div>
+
+            <hr/>
+
+            <div class="container alignCenter background6" data-cursor data-cursor-var="true">
+                <div class="box boxBG title" id="direction">
+                    <h2>Cursor Direction</h2>
+                </div>
+                <div class="box boxBG" data-cursor>
+                    <p>Cursor.js creates classes of "cursor-moving-up", "cursor-moving-down", "cursor-moving-left", or "cursor-moving-right" onto the body of the document depending on the last cursor movement direction.</p>
+                </div>
+            </div>
+
+            <hr/>
+
+            <div class="container alignCenter background7" data-cursor data-cursor-var="true">
+                <div class="box boxBG title" id="direction">
+                    <h2>Cursor States</h2>
+                </div>
+                <div class="box boxBG" data-cursor>
+                    <p>Cursor.js creates classes of "cursor-active" or "cursor-idle" onto the body of the document depending on cursor activity. When the mouse button is pressed, the class "cursor-down" is added to the body element.</p>
+                </div>
+            </div>
+
+            <hr/>
+
+            <div class="container alignCenter background8" data-cursor data-cursor-pixels="true" data-cursor-var="true">
+                <div class="box boxBG title" id="attributes">
+                    <h2>Data Attributes</h2>
+                </div>
+                <div class="box boxBG" data-cursor>
+                    <p>You can use the below data attributes for additional features</p>
+                    <div class="listItem">
+                        <pre>
+                            &lt;div id="yourelement" data-cursor-min="-100" data-cursor-max="100" data-cursor-offset="0" data-cursor-negativeOffset="0" data-cursor-height="0" data-cursor-global="false" data-cursor&gt; &lt;/div&gt;
+                        </pre>
+                    </div>
+                </div>
+            </div>
+
+            <hr/>
+
+            <div class="container alignCenter" data-cursor data-cursor-var="true">
+                <div id="creative" class="box" data-cursor data-cursor-var="true">
+                    <div class="headerText">BE CREATIVE</div>
+                </div>
+                <div id="withcss" class="box" data-cursor data-cursor-var="true">
+                    <div class="headerText">WITH YOUR CSS</div>
+                </div>
+                <div id="examples" class="box" data-cursor>
+                    <a class="moreExamples" href="https://codepen.io/collection/cursor-js" target="_Blank" style="margin-top:10px;" data-cursor>Codepen Examples</a>
+                </div>
+            </div>
+
+            <hr/>
+
+            <div class="container">
+                <div class="box">
+                    <p>Check out the code of the documentation as an example.</p>
+                </div>
+                <div class="listItem">
+                    <pre>
+                        <a href="https://github.com/iDev-Games/Cursor-JS/blob/main/index.html" target="_Blank" style="color:#FFF;">https://github.com/iDev-Games/Cursor-JS/blob/main/index.html</a>
+                    </pre>
+                </div>
+                <div class="box">
+                    <a href="https://github.com/iDev-Games/Cursor-JS" target="_Blank" style="color:#FFF;">Download here</a>
+                </div>
+                <div class="box">
+                    <a href="https://dev.to/idevgames" target="_Blank" style="color:#FFF;">Keep up to date on dev.to</a>
+                </div>
+            </div>
+
+        </div>
+    </body>
+</html>

@@ -1,0 +1,45 @@
+{
+  "name": "@idevgames/cursor-js",
+  "version": "1.0.0",
+  "description": "Cursor.js powers dynamic, CSS-driven cursor-reactive effects using CSS variables and cursor position data, making mouse interactions effortless. Create custom animations in CSS or use cursor-animations.css for ready-made effects—full control or quick setup. Perfect for interactive websites.",
+  "main": "src/cursor.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iDev-Games/cursor-js.git"
+  },
+  "keywords": [
+    "cursor",
+    "mouse",
+    "position",
+    "css",
+    "html",
+    "design",
+    "js",
+    "frontend",
+    "simple",
+    "animation",
+    "css-animations",
+    "css-variables",
+    "cursor-animations",
+    "mouse-tracking",
+    "data-attribute-html",
+    "hover-effects",
+    "cursor-effects",
+    "mouse-effects",
+    "parallax",
+    "magnetic",
+    "tilt"
+  ],
+  "author": "iDev Games",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/iDev-Games/cursor-js/issues"
+  },
+  "homepage": "https://github.com/iDev-Games/cursor-js#readme",
+  "publishConfig": {
+    "@iDev-Games:registry": "https://npm.pkg.github.com"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}

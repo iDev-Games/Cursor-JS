@@ -1,0 +1,476 @@
+/* Cursor-Animations.css v1.0.0 by iDev Games */
+
+/* ************************ */
+
+/* Cursor.js */
+
+
+    /* Cursor */
+
+    .cursor{
+        --cursor-delay:0s;
+        --cursor-duration:1s;
+        --cursor-blend:ease-out;
+        --cursor-direction:normal backwards;
+
+        position:relative;
+    }
+
+    /* END */
+
+
+/* END */
+
+/* ************************ */
+
+/* Magnetic */
+
+
+    /* Magnetic */
+
+    .cursor-magnetic.cursor-target, .cursor-magnetic .cursor-target{
+        transition: transform var(--cursor-duration) var(--cursor-blend);
+    }
+
+    .cursor-magnetic.cursor.cursor-target, .cursor-magnetic.cursor .cursor-target{
+        transform: translate(calc((var(--cursor-x) - 50%) * 0.2), calc((var(--cursor-y) - 50%) * 0.2));
+    }
+
+    /* END */
+
+    /* Magnetic Strong */
+
+    .cursor-magnetic-strong.cursor-target, .cursor-magnetic-strong .cursor-target{
+        transition: transform var(--cursor-duration) var(--cursor-blend);
+    }
+
+    .cursor-magnetic-strong.cursor.cursor-target, .cursor-magnetic-strong.cursor .cursor-target{
+        transform: translate(calc((var(--cursor-x) - 50%) * 0.5), calc((var(--cursor-y) - 50%) * 0.5));
+    }
+
+    /* END */
+
+    /* Magnetic Subtle */
+
+    .cursor-magnetic-subtle.cursor-target, .cursor-magnetic-subtle .cursor-target{
+        transition: transform var(--cursor-duration) var(--cursor-blend);
+    }
+
+    .cursor-magnetic-subtle.cursor.cursor-target, .cursor-magnetic-subtle.cursor .cursor-target{
+        transform: translate(calc((var(--cursor-x) - 50%) * 0.1), calc((var(--cursor-y) - 50%) * 0.1));
+    }
+
+    /* END */
+
+
+/* END */
+
+/* ************************ */
+
+/* Radial Gradient Effects */
+
+
+    /* Radial Gradient White */
+
+    .cursor-radial.cursor-target, .cursor-radial .cursor-target{
+        position: relative;
+        overflow: hidden;
+    }
+
+    .cursor-radial.cursor.cursor-target::before, .cursor-radial.cursor .cursor-target::before{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(circle 150px at var(--cursor-x) var(--cursor-y), rgba(255,255,255,0.3), transparent);
+        opacity: 1;
+        transition: opacity var(--cursor-duration) var(--cursor-blend);
+        pointer-events: none;
+    }
+
+    .cursor-radial.cursor-target::before, .cursor-radial .cursor-target::before{
+        opacity: 0;
+    }
+
+    /* END */
+
+    /* Radial Gradient Large */
+
+    .cursor-radial-large.cursor-target, .cursor-radial-large .cursor-target{
+        position: relative;
+        overflow: hidden;
+    }
+
+    .cursor-radial-large.cursor.cursor-target::before, .cursor-radial-large.cursor .cursor-target::before{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(circle 300px at var(--cursor-x) var(--cursor-y), rgba(255,255,255,0.2), transparent);
+        opacity: 1;
+        transition: opacity var(--cursor-duration) var(--cursor-blend);
+        pointer-events: none;
+    }
+
+    .cursor-radial-large.cursor-target::before, .cursor-radial-large .cursor-target::before{
+        opacity: 0;
+    }
+
+    /* END */
+
+    /* Radial Gradient Color */
+
+    .cursor-radial-color.cursor-target, .cursor-radial-color .cursor-target{
+        position: relative;
+        overflow: hidden;
+    }
+
+    .cursor-radial-color.cursor.cursor-target::before, .cursor-radial-color.cursor .cursor-target::before{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(circle 150px at var(--cursor-x) var(--cursor-y), hsla(calc(var(--cursor-deg)), 80%, 60%, 0.4), transparent);
+        opacity: 1;
+        transition: opacity var(--cursor-duration) var(--cursor-blend);
+        pointer-events: none;
+    }
+
+    .cursor-radial-color.cursor-target::before, .cursor-radial-color .cursor-target::before{
+        opacity: 0;
+    }
+
+    /* END */
+
+    /* Radial Gradient Glow */
+
+    .cursor-radial-glow.cursor-target, .cursor-radial-glow .cursor-target{
+        position: relative;
+        overflow: hidden;
+    }
+
+    .cursor-radial-glow.cursor.cursor-target::before, .cursor-radial-glow.cursor .cursor-target::before{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(circle 100px at var(--cursor-x) var(--cursor-y), rgba(255,255,255,0.6), transparent 50%);
+        opacity: 1;
+        transition: opacity var(--cursor-duration) var(--cursor-blend);
+        pointer-events: none;
+    }
+
+    .cursor-radial-glow.cursor-target::before, .cursor-radial-glow .cursor-target::before{
+        opacity: 0;
+    }
+
+    /* END */
+
+    /* Radial Gradient Rainbow */
+
+    .cursor-radial-rainbow.cursor-target, .cursor-radial-rainbow .cursor-target{
+        position: relative;
+        overflow: hidden;
+    }
+
+    .cursor-radial-rainbow.cursor.cursor-target::before, .cursor-radial-rainbow.cursor .cursor-target::before{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(circle 200px at var(--cursor-x) var(--cursor-y),
+            hsla(calc(var(--cursor-deg)), 100%, 70%, 0.5),
+            hsla(calc(var(--cursor-deg) + 60deg), 100%, 70%, 0.3),
+            transparent);
+        opacity: 1;
+        transition: opacity var(--cursor-duration) var(--cursor-blend);
+        pointer-events: none;
+    }
+
+    .cursor-radial-rainbow.cursor-target::before, .cursor-radial-rainbow .cursor-target::before{
+        opacity: 0;
+    }
+
+    /* END */
+
+    /* Radial Gradient Subtle */
+
+    .cursor-radial-subtle.cursor-target, .cursor-radial-subtle .cursor-target{
+        position: relative;
+        overflow: hidden;
+    }
+
+    .cursor-radial-subtle.cursor.cursor-target::before, .cursor-radial-subtle.cursor .cursor-target::before{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(circle 120px at var(--cursor-x) var(--cursor-y), rgba(255,255,255,0.15), transparent);
+        opacity: 1;
+        transition: opacity var(--cursor-duration) var(--cursor-blend);
+        pointer-events: none;
+    }
+
+    .cursor-radial-subtle.cursor-target::before, .cursor-radial-subtle .cursor-target::before{
+        opacity: 0;
+    }
+
+    /* END */
+
+
+/* END */
+
+/* ************************ */
+
+/* Parallax */
+
+
+    /* Parallax */
+
+    .cursor-parallax.cursor-target, .cursor-parallax .cursor-target{
+        transition: transform var(--cursor-duration) var(--cursor-blend);
+    }
+
+    .cursor-parallax.cursor.cursor-target, .cursor-parallax.cursor .cursor-target{
+        transform: translate(calc((var(--cursor-x) - 50%) * -0.1), calc((var(--cursor-y) - 50%) * -0.1));
+    }
+
+    /* END */
+
+    /* Parallax Fast */
+
+    .cursor-parallax-fast.cursor-target, .cursor-parallax-fast .cursor-target{
+        transition: transform var(--cursor-duration) var(--cursor-blend);
+    }
+
+    .cursor-parallax-fast.cursor.cursor-target, .cursor-parallax-fast.cursor .cursor-target{
+        transform: translate(calc((var(--cursor-x) - 50%) * -0.3), calc((var(--cursor-y) - 50%) * -0.3));
+    }
+
+    /* END */
+
+    /* Parallax Slow */
+
+    .cursor-parallax-slow.cursor-target, .cursor-parallax-slow .cursor-target{
+        transition: transform var(--cursor-duration) var(--cursor-blend);
+    }
+
+    .cursor-parallax-slow.cursor.cursor-target, .cursor-parallax-slow.cursor .cursor-target{
+        transform: translate(calc((var(--cursor-x) - 50%) * -0.05), calc((var(--cursor-y) - 50%) * -0.05));
+    }
+
+    /* END */
+
+
+/* END */
+
+/* ************************ */
+
+/* Glow */
+
+
+    /* Glow */
+
+    .cursor-glow.cursor-target, .cursor-glow .cursor-target{
+        transition: box-shadow var(--cursor-duration) var(--cursor-blend);
+    }
+
+    .cursor-glow.cursor.cursor-target, .cursor-glow.cursor .cursor-target{
+        box-shadow: 0 0 20px rgba(255, 255, 255, calc(var(--cursor-x) / 2 + var(--cursor-y) / 2));
+    }
+
+    /* END */
+
+    /* Glow Color */
+
+    .cursor-glow-color.cursor-target, .cursor-glow-color .cursor-target{
+        transition: box-shadow var(--cursor-duration) var(--cursor-blend);
+    }
+
+    .cursor-glow-color.cursor.cursor-target, .cursor-glow-color.cursor .cursor-target{
+        box-shadow: 0 0 30px hsl(calc(var(--cursor-deg)), 80%, 60%);
+    }
+
+    /* END */
+
+    /* Glow Strong */
+
+    .cursor-glow-strong.cursor-target, .cursor-glow-strong .cursor-target{
+        transition: box-shadow var(--cursor-duration) var(--cursor-blend);
+    }
+
+    .cursor-glow-strong.cursor.cursor-target, .cursor-glow-strong.cursor .cursor-target{
+            box-shadow: 0px 0px 40px rgba(255, 255, 255, calc(var(--cursor-x) + var(--cursor-y)));
+    }
+
+    /* END */
+
+
+/* END */
+
+/* ************************ */
+
+/* Scale */
+
+
+    /* Scale Hover */
+
+    .cursor-scale.cursor-target, .cursor-scale .cursor-target{
+        transition: transform var(--cursor-duration) var(--cursor-blend);
+    }
+
+    .cursor-scale.cursor.cursor-target, .cursor-scale.cursor .cursor-target{
+        transform: scale(1.1);
+    }
+
+    /* END */
+
+    /* Scale Dynamic */
+
+    .cursor-scale-dynamic.cursor-target, .cursor-scale-dynamic .cursor-target{
+        transition: transform var(--cursor-duration) var(--cursor-blend);
+    }
+
+    .cursor-scale-dynamic.cursor.cursor-target, .cursor-scale-dynamic.cursor .cursor-target{
+        transform: scale(calc(2 * var(--cursor-y)));
+    }
+
+    /* END */
+
+    /* Scale Large */
+
+    .cursor-scale-large.cursor-target, .cursor-scale-large .cursor-target{
+        transition: transform var(--cursor-duration) var(--cursor-blend);
+    }
+
+    .cursor-scale-large.cursor.cursor-target, .cursor-scale-large.cursor .cursor-target{
+        transform: scale(1.2);
+    }
+
+    /* END */
+
+
+/* END */
+
+/* ************************ */
+
+/* Rotate */
+
+
+    /* Rotate */
+
+    .cursor-rotate.cursor-target, .cursor-rotate .cursor-target{
+        transition: transform var(--cursor-duration) var(--cursor-blend);
+    }
+
+    .cursor-rotate.cursor.cursor-target, .cursor-rotate.cursor .cursor-target{
+        transform: rotate(calc(var(--cursor-deg) * 0.5));
+    }
+
+    /* END */
+
+    /* Rotate Follow */
+
+    .cursor-rotate-follow.cursor-target, .cursor-rotate-follow .cursor-target{
+        transition: transform var(--cursor-duration) var(--cursor-blend);
+    }
+
+    .cursor-rotate-follow.cursor.cursor-target, .cursor-rotate-follow.cursor .cursor-target{
+        transform: rotate(var(--cursor-deg));
+    }
+
+    /* END */
+
+    /* Rotate Reverse */
+
+    .cursor-rotate-reverse.cursor-target, .cursor-rotate-reverse .cursor-target{
+        transition: transform var(--cursor-duration) var(--cursor-blend);
+    }
+
+    .cursor-rotate-reverse.cursor.cursor-target, .cursor-rotate-reverse.cursor .cursor-target{
+        transform: rotate(calc(var(--cursor-deg) * -1));
+    }
+
+    /* END */
+
+
+/* END */
+
+
+/* ************************ */
+
+/* Gradient */
+
+
+    /* Gradient Background */
+
+    .cursor-gradient.cursor-target, .cursor-gradient .cursor-target{
+        transition: background var(--cursor-duration) var(--cursor-blend);
+    }
+
+    .cursor-gradient.cursor.cursor-target, .cursor-gradient.cursor .cursor-target{
+        background: radial-gradient(circle at var(--cursor-x) var(--cursor-y), rgba(255,255,255,0.2), transparent);
+    }
+
+    /* END */
+
+    /* Gradient Color */
+
+    .cursor-gradient-color.cursor-target, .cursor-gradient-color .cursor-target{
+        transition: background var(--cursor-duration) var(--cursor-blend);
+    }
+
+    .cursor-gradient-color.cursor.cursor-target, .cursor-gradient-color.cursor .cursor-target{
+        background: radial-gradient(circle at var(--cursor-x) var(--cursor-y), hsl(calc(var(--cursor-deg)), 80%, 60%), transparent);
+    }
+
+    /* END */
+
+
+/* END */
+
+/* ************************ */
+
+/* Opacity */
+
+
+    /* Opacity Fade */
+
+    .cursor-opacity.cursor-target, .cursor-opacity .cursor-target{
+        transition: opacity var(--cursor-duration) var(--cursor-blend);
+        opacity: 0.3;
+    }
+
+    .cursor-opacity.cursor.cursor-target, .cursor-opacity.cursor .cursor-target{
+        opacity: 1;
+    }
+
+    /* END */
+
+    /* Opacity Dynamic */
+
+    .cursor-opacity-dynamic.cursor-target, .cursor-opacity-dynamic .cursor-target{
+        transition: opacity var(--cursor-duration) var(--cursor-blend);
+    }
+
+    .cursor-opacity-dynamic.cursor.cursor-target, .cursor-opacity-dynamic.cursor .cursor-target{
+        opacity: calc((var(--cursor-x) + var(--cursor-y)) / 200);
+    }
+
+    /* END */
+
+
+/* END */
+

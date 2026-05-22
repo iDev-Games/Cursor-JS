@@ -1,0 +1,289 @@
+<html>
+    <head>
+        <title>Cursor-Animations.css – Configurable Predefined Cursor Animations for Your Website</title>
+
+        <!-- Cursor JS -->
+        <script src="src/cursor.js"></script>
+        <link rel="stylesheet" href="src/cursor-animations.css"></link>
+
+        <!-- Other-->
+        <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.min.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/prism-themes@1.9.0/themes/prism-material-dark.min.css" rel="stylesheet">
+
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+        <!--End Fonts -->
+
+        <!-- Mobile viewport meta tag -->
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <!-- Styles -->
+        <style>
+            html {
+                scroll-behavior: smooth;
+            }
+            body{
+                margin:0px;
+                padding:0px;
+                background-color:#060606;
+                color:#FFF;
+                font-family: 'Space Mono', monospace;
+            }
+            h1{
+                font-family: 'Bebas Neue', cursive;
+                color: #700c0c;
+                text-shadow: 2px 2px 2px #000000;
+                font-size:72px;
+            }
+            .container{
+                background-color:#060606;
+                width:100%;
+                min-height:calc(100vh - 110px);
+                position:relative;
+                margin:auto;
+                display:flex;
+                padding: 55px 0px;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                max-width: 1800px;
+                border-bottom:solid 2px #2f2f2f;
+            }
+            .box{
+                position:relative;
+                display: inline-block;
+                width:auto;
+                margin:auto;
+                margin:20px;
+                padding:20px;
+                max-width: 100%;
+            }
+            .demo-box{
+                background-color:#1a1a1a;
+                width:250px;
+                height:250px;
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                margin:20px;
+                border:2px solid #333;
+                cursor:pointer;
+            }
+            .demo-box .cursor-target{
+                background-color:#700c0c;
+                width:150px;
+                height:150px;
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                color:#FFF;
+                font-weight:bold;
+            }
+            .section-title{
+                font-family: 'Bebas Neue', cursive;
+                font-size:48px;
+                color:#FFF;
+                margin-top:40px;
+            }
+            .code-block{
+                background-color:#1e1e1e;
+                padding:20px;
+                margin:10px 0;
+                border-radius:5px;
+                font-size:14px;
+                overflow-x:auto;
+            }
+            .grid{
+                display:grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap:20px;
+                max-width:1200px;
+                width:100%;
+                padding:20px;
+                justify-items: center;
+            }
+        </style>
+        <!-- End of styles -->
+
+    </head>
+    <body>
+
+        <div class="container">
+            <h1>Cursor-Animations.css</h1>
+            <div class="box">
+                <p>Configurable predefined cursor animations. Hover over the boxes below to see the effects!</p>
+            </div>
+        </div>
+
+        <div class="container">
+            <h2 class="section-title">Magnetic Effects</h2>
+            <div class="grid">
+                <div class="demo-box cursor-magnetic cursor-target" data-cursor data-cursor-var="true">
+                    Magnetic
+                </div>
+                <div class="demo-box cursor-magnetic-strong cursor-target" data-cursor data-cursor-var="true">
+                    Magnetic Strong
+                </div>
+                <div class="demo-box cursor-magnetic-subtle cursor-target" data-cursor data-cursor-var="true">
+                    Magnetic Subtle
+                </div>
+            </div>
+            <div class="code-block">
+                <pre>&lt;div class="cursor-magnetic cursor-target" data-cursor data-cursor-var="true"&gt;
+    Content
+&lt;/div&gt;</pre>
+            </div>
+        </div>
+
+        <div class="container">
+            <h2 class="section-title">Radial Gradient Effects</h2>
+            <div class="grid">
+                <div class="demo-box cursor-radial cursor-target" data-cursor data-cursor-var="true">
+                    Radial
+                </div>
+                <div class="demo-box cursor-radial-large cursor-target" data-cursor data-cursor-var="true">
+                    Radial Large
+                </div>
+                <div class="demo-box cursor-radial-color cursor-target" data-cursor data-cursor-var="true" data-cursor-degrees="true">
+                    Radial Color
+                </div>
+                <div class="demo-box cursor-radial-glow cursor-target" data-cursor data-cursor-var="true">
+                    Radial Glow
+                </div>
+                <div class="demo-box cursor-radial-rainbow cursor-target" data-cursor data-cursor-var="true" data-cursor-degrees="true">
+                    Radial Rainbow
+                </div>
+                <div class="demo-box cursor-radial-subtle cursor-target" data-cursor data-cursor-var="true">
+                    Radial Subtle
+                </div>
+            </div>
+            <div class="code-block">
+                <pre>&lt;div class="cursor-radial cursor-target" data-cursor data-cursor-var="true"&gt;
+    Content
+&lt;/div&gt;</pre>
+            </div>
+        </div>
+
+        <div class="container">
+            <h2 class="section-title">Parallax Effects</h2>
+            <div class="grid">
+                <div class="demo-box cursor-parallax" data-cursor data-cursor-var="true">
+                    <div class="cursor-target">Parallax</div>
+                </div>
+                <div class="demo-box cursor-parallax-fast" data-cursor data-cursor-var="true">
+                    <div class="cursor-target">Parallax Fast</div>
+                </div>
+                <div class="demo-box cursor-parallax-slow" data-cursor data-cursor-var="true">
+                    <div class="cursor-target">Parallax Slow</div>
+                </div>
+            </div>
+            <div class="code-block">
+                <pre>&lt;div class="cursor-parallax" data-cursor data-cursor-var="true"&gt;
+    &lt;div class="cursor-target"&gt;Content&lt;/div&gt;
+&lt;/div&gt;</pre>
+            </div>
+        </div>
+
+        <div class="container">
+            <h2 class="section-title">Glow Effects</h2>
+            <div class="grid">
+                <div class="demo-box cursor-glow cursor-target" data-cursor data-cursor-var="true">
+                    Glow
+                </div>
+                <div class="demo-box cursor-glow-color cursor-target" data-cursor data-cursor-var="true" data-cursor-degrees="true">
+                    Glow Color
+                </div>
+                <div class="demo-box cursor-glow-strong cursor-target" data-cursor data-cursor-var="true">
+                    Glow Strong
+                </div>
+            </div>
+            <div class="code-block">
+                <pre>&lt;div class="cursor-glow cursor-target" data-cursor data-cursor-var="true"&gt;
+    Content
+&lt;/div&gt;</pre>
+            </div>
+        </div>
+
+        <div class="container">
+            <h2 class="section-title">Scale Effects</h2>
+            <div class="grid">
+                <div class="demo-box cursor-scale cursor-target" data-cursor>
+                    Scale
+                </div>
+                <div class="demo-box cursor-scale-dynamic cursor-target" data-cursor data-cursor-var="true">
+                    Scale Dynamic
+                </div>
+                <div class="demo-box cursor-scale-large cursor-target" data-cursor>
+                    Scale Large
+                </div>
+            </div>
+            <div class="code-block">
+                <pre>&lt;div class="cursor-scale cursor-target" data-cursor&gt;
+    Content
+&lt;/div&gt;</pre>
+            </div>
+        </div>
+
+        <div class="container">
+            <h2 class="section-title">Rotate Effects</h2>
+            <div class="grid">
+                <div class="demo-box cursor-rotate" data-cursor data-cursor-var="true" data-cursor-degrees="true">
+                    <div class="cursor-target">Rotate</div>
+                </div>
+                <div class="demo-box cursor-rotate-follow" data-cursor data-cursor-var="true" data-cursor-degrees="true">
+                    <div class="cursor-target">Rotate Follow</div>
+                </div>
+                <div class="demo-box cursor-rotate-reverse" data-cursor data-cursor-var="true" data-cursor-degrees="true">
+                    <div class="cursor-target">Rotate Reverse</div>
+                </div>
+            </div>
+            <div class="code-block">
+                <pre>&lt;div class="cursor-rotate" data-cursor data-cursor-var="true" data-cursor-degrees="true"&gt;
+    &lt;div class="cursor-target"&gt;Content&lt;/div&gt;
+&lt;/div&gt;</pre>
+            </div>
+        </div>
+
+
+        <div class="container">
+            <h2 class="section-title">Opacity Effects</h2>
+            <div class="grid">
+                <div class="demo-box cursor-opacity" data-cursor>
+                    <div class="cursor-target">Opacity Fade</div>
+                </div>
+                <div class="demo-box cursor-opacity-dynamic" data-cursor data-cursor-var="true">
+                    <div class="cursor-target">Opacity Dynamic</div>
+                </div>
+            </div>
+            <div class="code-block">
+                <pre>&lt;div class="cursor-opacity" data-cursor&gt;
+    &lt;div class="cursor-target"&gt;Content&lt;/div&gt;
+&lt;/div&gt;</pre>
+            </div>
+        </div>
+
+        <div class="container">
+            <h2 class="section-title">Configuration</h2>
+            <div class="box">
+                <p>Customize animations using CSS variables:</p>
+            </div>
+            <div class="code-block">
+                <pre>.cursor{
+    --cursor-delay: 0s;
+    --cursor-duration: 1s;
+    --cursor-blend: ease-out;
+    --cursor-direction: normal backwards;
+}</pre>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="box">
+                <a href="index.html" style="color:#FFF; text-decoration:none; background:#700c0c; padding:15px 30px; display:inline-block;">Back to Documentation</a>
+            </div>
+        </div>
+
+    </body>
+</html>
